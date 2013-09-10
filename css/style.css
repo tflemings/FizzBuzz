@@ -1,0 +1,20 @@
+/* 
+    Document   : style
+    Created on : Sep 9, 2013, 10:23:56 PM
+    Author     : tony
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+html body{
+    font-family: 'Rokkitt', serif;
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+}
+
+#content{
+    width: 100%;
+    border: 2px solid blue;
+}
+
