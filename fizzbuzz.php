@@ -1,9 +1,44 @@
 <?php
+include 'header.php';
+include 'Validator.php';
 define ("THREE", "Fizz");
 define ("FIVE", "Buzz");
-$start = $_POST['start'];
-$stop = $_POST['stop'];
+$messages = array();
+$v = new Validator();
+$start = 1;
+$stop = 100;
+if (isset($_POST['start']) && isset($_POST['stop'])) {
+    if ($_POST['start'] != '') {
+        $filteredStart = $v -> filterInteger($_POST['start']);
+        if ($filteredStart !== false) {
+            $start = $filteredStart;
+        } else {
+            $messages['start_message'] = 'Invalid start value replaced by 1';
+        }
+    } else {
+        $messages['start_message'] = 'Invalid start value replaced by 1';
+    }
+    if ($_POST['stop'] != '') {
+        $filteredStop = $v -> filterInteger($_POST['stop']);
+        if ($filteredStop !== false) {
+            $stop = $filteredStop;
+        } else {
+            $messages['stop_message'] = 'Invalid stop value replaced by 100';
+        }
+    } else {
+        $messages['stop_message'] = 'Invalid stop value replaced by 100';
+    }
+} 
 $output = '';
+?>
+<h1 id="result_banner">FizzBuzz between <?php echo $start; ?> and <?php echo $stop; ?> </h1> 
+<?php
+foreach ($messages as $key => $value) { 
+    echo "<p class='warning'>$value</p>";
+}
+?>
+<ul>
+<?php
 for ($x = $start; $x <= $stop; $x++) {
     if ($x % 3 == 0) {
         $output = THREE;
@@ -15,7 +50,11 @@ for ($x = $start; $x <= $stop; $x++) {
     } else {
         $output = $x;
     }
-    echo $output . "<br />"; 
+    echo "<li>$output</li>"; 
 }
 ?>
-<a href="index.php">Back to form</a> <?php
+</ul>
+<a href="index.php">Back to FizzBuzz</a> 
+<?php
+include 'footer.php';
+?>

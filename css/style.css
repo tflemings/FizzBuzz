@@ -48,6 +48,18 @@ html body{
     display: block;
 }
 
+#content ul{
+    list-style-type: none;
+}
+
+#content li{
+    font-size: 1.8em;
+}
+
+#content #result_banner{
+    text-align: center;
+}
+
 label{
     display: inline-block;
     width: 10em;
@@ -70,5 +82,13 @@ input{
 
 .italic{
     font-style: italic;
+}
+
+a{
+    font-size: 1.8em;
+}
+
+.warning{
+    color: red;
 }
 
