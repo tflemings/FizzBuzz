@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'header.inc';
 ?>
 <p id="appName">FizzBuzz</p>
 <h1>Author: Tony Flemings</h1>
@@ -25,5 +25,5 @@ include 'header.php';
     </form>
 </fieldset> 
 <?php
-include 'footer.php';
+include 'footer.inc';
 ?>

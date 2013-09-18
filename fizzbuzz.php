@@ -1,6 +1,6 @@
 <?php
-include 'header.php';
-include 'Validator.php';
+include 'header.inc';
+include 'Validator.inc';
 define ("THREE", "Fizz");
 define ("FIVE", "Buzz");
 $messages = array();
@@ -56,5 +56,5 @@ for ($x = $start; $x <= $stop; $x++) {
 </ul>
 <a href="index.php">Back to FizzBuzz</a> 
 <?php
-include 'footer.php';
+include 'footer.inc';
 ?>
